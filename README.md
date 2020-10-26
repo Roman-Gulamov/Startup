@@ -2,6 +2,6 @@
 
 1. `git clone https://github.com/Roman-Gulamov/Startup.git`
 
-2. `yarn install`
+2. `npm install`
 
-3. `yarn start`
+3. `npm run serve`
