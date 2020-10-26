@@ -27,7 +27,11 @@ jobs:
 
     - run: npm ci
     - run: npm run build
+      env:
+        NEXT_PUBLIC_BASE_PATH: '/Startup'
     - run: npm run export
+      env:
+        NEXT_PUBLIC_BASE_PATH: '/Startup'
     - run: touch ./out/.nojekyll
       
     - name: Deploy 🚀

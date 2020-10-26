@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-const prefix = '/Startup';
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default class MyDocument extends Document {
     render() {
