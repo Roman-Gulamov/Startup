@@ -8,5 +8,14 @@ module.exports = {
     assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
 }
 
+module.exports = {
+    trailingSlash: true,
+    exportPathMap: function() {
+        return {
+            '/': { page: '/' }
+        };
+    }
+};
+
 const withImages = require('next-images');
 module.exports = withImages();
