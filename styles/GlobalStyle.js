@@ -1,10 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
+import background from '../assets/images/header/background.jpg';
+
 
 export const GlobalStyle = createGlobalStyle`
     *, *:before, *:after {
         box-sizing: border-box;
-        ${'' /* font-family: 'Arbutus'; */}
-        font-size: 23px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
         line-height: 1.2;
         outline: none;
     }
@@ -53,6 +55,8 @@ export const GlobalStyle = createGlobalStyle`
             top: 0;
             left: 0;
             will-change: transform;
+            background: url(${background}) no-repeat 50%;
+            background-size: cover;
             z-index: -1;
         }
         
@@ -65,7 +69,7 @@ export const GlobalStyle = createGlobalStyle`
         }
     
         &::-webkit-scrollbar-thumb { 
-            background-color: #D3D3D3;
+            background-color: #661A14;
             border-radius: 15px;
             height: 100px;
         }
