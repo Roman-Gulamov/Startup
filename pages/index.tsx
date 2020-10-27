@@ -1,10 +1,15 @@
+import Link from 'next/link';
 import { AppWrapper } from '../components/AppWrapper';
-import { H1 } from '../styles/Home';
+import { Wrapper, HomeTitle, HomeSubtitle, HomeButton } from '../styles/Home';
 
 const Index = () => {
     return (
         <AppWrapper>
-            <H1>Hello!</H1>
+            <Wrapper>
+                <HomeTitle>Welcome to startup</HomeTitle>
+                <HomeSubtitle>Your favourite creative agency template</HomeSubtitle>
+                <Link href='/contact'><HomeButton>Get started</HomeButton></Link>
+            </Wrapper>
         </AppWrapper>
     )
 }
