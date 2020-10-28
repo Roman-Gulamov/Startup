@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { GlobalStyle } from '../styles/GlobalStyle';
 
 const MyApp = ({ Component, pageProps }) => { 
     return ( 
-        <Component {...pageProps} /> 
+        <>
+            <GlobalStyle />
+            <Component {...pageProps} /> 
+        </>
     )
 }
 
