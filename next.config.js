@@ -5,13 +5,7 @@ module.exports = {
         API_URL: process.env.API_URL
     },
     basePath: process.env.NEXT_PUBLIC_BASE_PATH,
-    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
-    trailingSlash: true,
-    exportPathMap: function() {
-        return {
-            '/': { page: '/' }
-        };
-    }
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
 }
 
 const withImages = require('next-images');
