@@ -7,7 +7,6 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 import { Container } from '../styles/Container';
 import { Wrapper, AppTitle, AppNav, Main, AppHumburger, Line, NavInvisible} from '../styles/AppWrapper';
 
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export const AppWrapper = ({ children, title="Startup" }) => {
     const [isOpen, setIsOpen] = useState('');
@@ -39,13 +38,13 @@ export const AppWrapper = ({ children, title="Startup" }) => {
                     </AppHumburger>
                     <AppTitle>Startup</AppTitle>
                     <AppNav open={isOpen}>
-                        <Link href='/' as={`${prefix}/`}><a>Home</a></Link>
-                        <Link href='/services' as={`${prefix}/services`}><a>Services</a></Link>
-                        <Link href='/about' as={`${prefix}/about`}><a>About</a></Link>
-                        <Link href='/works' as={`${prefix}/works`}><a>Works</a></Link>
-                        <Link href='/blog' as={`${prefix}/blog`}><a>Blog</a></Link>
-                        <Link href='/clients' as={`${prefix}/clients`}><a>Clients</a></Link>
-                        <Link href='/contact' as={`${prefix}/contact`}><a>Contact</a></Link>
+                        <Link href='/'><a>Home</a></Link>
+                        <Link href='/services'><a>Services</a></Link>
+                        <Link href='/about'><a>About</a></Link>
+                        <Link href='/works'><a>Works</a></Link>
+                        <Link href='/blog'><a>Blog</a></Link>
+                        <Link href='/clients'><a>Clients</a></Link>
+                        <Link href='/contact'><a>Contact</a></Link>
                         <NavInvisible
                             open={isOpen}
                             onClick={toggleMenu}
