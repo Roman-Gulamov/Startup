@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import background from '../assets/images/header/background.jpg';
 
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 export const GlobalStyle = createGlobalStyle`
     *, *:before, *:after {
         box-sizing: border-box;
@@ -56,7 +54,7 @@ export const GlobalStyle = createGlobalStyle`
             top: 0;
             left: 0;
             will-change: transform;
-            background: url(${prefix}${background}) no-repeat 50%;
+            background: url(${background}) no-repeat 50%;
             background-size: cover;
             z-index: -1;
         }
