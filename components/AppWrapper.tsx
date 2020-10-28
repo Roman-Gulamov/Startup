@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import { GlobalStyle } from '../styles/GlobalStyle';
 import { Container } from '../styles/Container';
 import { Wrapper, AppTitle, AppNav, Main, AppHumburger, Line, NavInvisible} from '../styles/AppWrapper';
 
@@ -19,7 +18,6 @@ export const AppWrapper = ({ children, title="Startup" }) => {
 
     return (
         <>
-            <GlobalStyle />
             <Head>
                 <title>{title}</title>
                 <meta name='keywords' content='startup,ssr,react,next.js' />
