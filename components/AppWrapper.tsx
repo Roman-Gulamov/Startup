@@ -3,11 +3,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
+import { IWrapper } from '../interfaces/interface';
 import { Container } from '../styles/Container';
 import { Wrapper, AppTitle, AppNav, Main, AppHumburger, Line, NavInvisible} from '../styles/AppWrapper';
 
 
-export const AppWrapper = ({ children, title="Startup" }) => {
+export const AppWrapper = ({ children, title }: IWrapper) => {
     const [isOpen, setIsOpen] = useState('');
 
     const toggleMenu = () => {
@@ -19,9 +20,11 @@ export const AppWrapper = ({ children, title="Startup" }) => {
     return (
         <>
             <Head>
-                <title>{title}</title>
+                <title>Startup {title}</title>
                 <meta name='keywords' content='startup,ssr,react,next.js' />
                 <meta name='description' content='Startup project' />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge" />
                 <meta charSet='UTF-8' />
             </Head>
             <Container>
