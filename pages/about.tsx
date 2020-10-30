@@ -9,6 +9,7 @@ import { Loading } from '../styles/Loading';
 import { Wrapper, AboutText, TextItem, AboutDevelopers } from '../styles/About';
 
 
+
 const About = ({ about: serverAbout }) => {
     const [about, setAbout] = useState(serverAbout);
     
@@ -22,7 +23,6 @@ const About = ({ about: serverAbout }) => {
         !serverAbout ? load() : null;
     }, [])
 
-console.log(typeof about)
     if (!about) {
         return (
             <AppWrapper title='| About'>
@@ -53,7 +53,11 @@ console.log(typeof about)
 
 export default About;
 
-About.getInitialProps = async () => {
+About.getInitialProps = async ({ req }) => {
+    if (!req) {
+        return {about: null}
+    }
+
     const response = await fetch(`${process.env.API_URL}/about`);
     const about = await response.json();
 
@@ -61,5 +65,3 @@ About.getInitialProps = async () => {
         about
     }
 }
-
-//добавить типизацию

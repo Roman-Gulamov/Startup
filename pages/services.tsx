@@ -11,7 +11,7 @@ import { Wrapper, ServiceItem, ItemImg, ItemTitle, ItemSubtitle } from '../style
 
 
 const Services = ({ services: serverServices }: ServicesProps) => {
-    const [services, setServices] = useState(serverServices);
+    const [services, setServices] = useState(serverServices ? serverServices : []);
     
     useEffect(() => {
         const load = async () => {
@@ -54,9 +54,13 @@ const Services = ({ services: serverServices }: ServicesProps) => {
 export default Services;
 
 
-Services.getInitialProps = async () => {
+Services.getInitialProps = async ({ req }) => {
+    if (!req) {
+        return {services: null}
+    }
+
     const response = await fetch(`${process.env.API_URL}/services`);
-    const services: IServices[] = await response.json();
+    const services = await response.json();
 
     return {
         services
