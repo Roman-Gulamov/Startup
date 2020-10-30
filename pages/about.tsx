@@ -9,7 +9,7 @@ import { Loading } from '../styles/Loading';
 import { Wrapper, AboutText, TextItem, AboutDevelopers } from '../styles/About';
 
 
-const About = ({ about: serverAbout }: AboutPage) => {
+const About = ({ about: serverAbout }) => {
     const [about, setAbout] = useState(serverAbout);
     
     useEffect(() => {
@@ -55,9 +55,11 @@ export default About;
 
 About.getInitialProps = async () => {
     const response = await fetch(`${process.env.API_URL}/about`);
-    const about: IAboutProps = await response.json();
+    const about = await response.json();
 
     return {
         about
     }
 }
+
+//добавить типизацию
