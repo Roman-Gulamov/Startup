@@ -1,12 +1,63 @@
+import { useEffect, useState } from 'react';
+
 import { AppWrapper } from '../components/AppWrapper';
+import { AboutMap } from '../components/AboutMap';
+import { AboutPage, IAboutProps } from '../interfaces/interface';
+
+import loading from '../assets/images/loading.svg';
+import { Loading } from '../styles/Loading';
+import { Wrapper, AboutText, TextItem, AboutDevelopers } from '../styles/About';
 
 
-const About = () => {
-    return (
-        <AppWrapper>
-            <p>About!</p>
-        </AppWrapper>
-    )
+const About = ({ about: serverAbout }: AboutPage) => {
+    const [about, setAbout] = useState(serverAbout);
+    
+    useEffect(() => {
+        const load = async () => {
+            const response = await fetch(`${process.env.API_URL}/about`);
+            const json = await response.json();
+            setAbout(json);
+        }
+
+        !serverAbout ? load() : null;
+    }, [])
+
+console.log(typeof about)
+    if (!about) {
+        return (
+            <AppWrapper title='| About'>
+                <Loading>
+                    <img src={loading} alt="loading..." />
+                </Loading>
+            </AppWrapper>
+        )
+    } else {
+        return (
+            <AppWrapper title="| About">
+                <Wrapper>
+                    <AboutText>
+                        {about.description.map(({ id, title }) =>
+                            <TextItem key={id}>
+                                <p>{title}</p>
+                            </TextItem>
+                        )}
+                    </AboutText>
+                    <AboutDevelopers>
+                        <AboutMap about={about} />
+                    </AboutDevelopers>
+                </Wrapper>
+            </AppWrapper>
+        )
+    }
 }
 
-export default About;   
+export default About;
+
+About.getInitialProps = async () => {
+    const response = await fetch(`${process.env.API_URL}/about`);
+    const about: IAboutProps = await response.json();
+
+    return {
+        about
+    }
+}
