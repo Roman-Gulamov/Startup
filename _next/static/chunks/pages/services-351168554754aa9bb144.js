@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[15],{L7Aj:function(n,i,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/services",function(){return e("i1Bi")}])},i1Bi:function(n,i,e){"use strict";e.r(i);var c=e("nKUr"),r=e("VI8d");i.default=function(){return Object(c.jsx)(r.a,{children:Object(c.jsx)("p",{children:"Services!"})})}}},[["L7Aj",0,2,1,3,4]]]);

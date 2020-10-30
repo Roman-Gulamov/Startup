@@ -1,0 +1,1 @@
+_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[12],{JzgJ:function(n,i,t){"use strict";t.r(i);var c=t("nKUr"),e=t("VI8d");i.default=function(){return Object(c.jsx)(e.a,{children:Object(c.jsx)("p",{children:"Clients!"})})}},"yL+B":function(n,i,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/clients",function(){return t("JzgJ")}])}},[["yL+B",0,2,1,3,4]]]);
