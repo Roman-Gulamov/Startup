@@ -5,3 +5,7 @@ export interface IOpen {
 export interface IPosition {
     position: string
 }
+
+export interface IActiveClass {
+    activeClass: string
+}
