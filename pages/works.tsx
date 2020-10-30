@@ -62,7 +62,7 @@ const Works = ({ works: serverWorks }) => {
 
     if (!works) {
         return (
-            <AppWrapper title='| About'>
+            <AppWrapper title='| Works'>
                 <Loading>
                     <img src={loading} alt="loading..." />
                 </Loading>
@@ -70,7 +70,7 @@ const Works = ({ works: serverWorks }) => {
         )
     } else {
         return (
-            <AppWrapper title="| About">
+            <AppWrapper title="| Works">
                 <WorksSort>
                     {directions.map(({ id, direction }) =>
                         <SortItem
