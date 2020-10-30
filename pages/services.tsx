@@ -11,7 +11,7 @@ import { Wrapper, ServiceItem, ItemImg, ItemTitle, ItemSubtitle } from '../style
 
 
 const Services = ({ services: serverServices }: ServicesProps) => {
-    const [services, setServices] = useState(serverServices ? serverServices : []);
+    const [services, setServices] = useState(serverServices);
     
     useEffect(() => {
         const load = async () => {
