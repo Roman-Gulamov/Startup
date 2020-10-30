@@ -31,6 +31,7 @@ export const AppNav = styled.nav<IOpen>`
     justify-content: space-around;
     font-weight: 700;
     color: #fff;
+    z-index: 999;
     
     @media screen and (max-width: 768px) {
         position: fixed;

@@ -61,7 +61,7 @@ export const ItemImage = styled.div`
     position: relative;
     width: 23em;
     height: auto;
-    z-index: -1;
+    
 
     & img {
         width: 100%;
