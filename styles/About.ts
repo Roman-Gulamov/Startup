@@ -54,6 +54,7 @@ export const ItemImage = styled.div`
     position: relative;
     width: 17em;
     height: auto;
+    z-index: -1;
 
     & img {
         width: 100%;
@@ -83,14 +84,16 @@ export const ItemInvisible = styled.div`
         cursor: pointer;
 
         & svg {
+            width: 1.3em !important;
             height: 100%;
         }
     }
 `
 
 export const InvisibleLink = styled.div`
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 30%;
     transition: background 0.3s ease;
 
     &:hover {

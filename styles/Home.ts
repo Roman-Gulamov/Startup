@@ -70,7 +70,7 @@ export const HomeButton = styled.button`
     &:hover {
         background: rgba(104, 31, 25, 0.9);
         text-decoration: underline;
-        color: rgba(24,240,171, 0.9);
+        color: #5b78c7;
         transform: scale(0.95);
     }
 `

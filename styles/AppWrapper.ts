@@ -62,7 +62,7 @@ export const AppNav = styled.nav<IOpen>`
 
         &:hover {
             text-decoration: underline;
-            color: rgba(24, 240, 171, 0.9);
+            color: #5b78c7;
         }
 
         &:last-of-type {
