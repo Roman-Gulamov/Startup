@@ -38,11 +38,11 @@ export interface IAboutTeam {
 }
 
 export interface IPropsAbout extends IAboutDescription{
-    id: number,
-    image: string,
-    name: string,
-    position: string,
-    social: string
+    id?: number,
+    image?: string,
+    name?: string,
+    position?: string,
+    social?: string
 }
 
 
