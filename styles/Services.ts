@@ -22,20 +22,6 @@ export const ServiceItem = styled.div`
     }
 `
 
-export const ItemImg = styled.div`
-    width: 7em;
-    height: auto;
-
-    @media screen and (max-width: 768px) {
-        width: 6em;
-    }
-
-    & img {
-        width: 100%;
-        height: auto;
-    }
-`
-
 export const ItemTitle = styled.h3`
     margin: 0.6em 0;
     font-size: 1.3em;

@@ -14,6 +14,7 @@ export const SortItem = styled.div<IActiveClass>`
     font-weight: bold;
     cursor: pointer;
     color: ${props => props.activeClass ?  '#5b78c7' : 'none'};
+    text-decoration: ${props => props.activeClass ?  'underline' : 'none'};
     transition: all 0.4s ease;
 
     @media screen and (max-width: 500px) {
@@ -54,39 +55,6 @@ export const CardsItem = styled.div`
 
     @media screen and (max-width: 768px) {
         width: 100%;
-    }
-`
-
-export const ItemImage = styled.div`
-    position: relative;
-    width: 23em;
-    height: auto;
-    
-
-    & img {
-        width: 100%;
-        height: auto;
-    }
-`
-
-export const ItemInvisible = styled.div`
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 99%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 3em 2em;
-    font-weight: 600;
-    background-color: rgba(207, 0, 15, 0.7);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-
-    &:hover {
-        opacity: 1;
     }
 `
 

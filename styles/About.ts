@@ -50,45 +50,6 @@ export const DevelopersItem = styled.div`
     }
 `
 
-export const ItemImage = styled.div`
-    position: relative;
-    width: 17em;
-    height: auto;
-
-    & img {
-        width: 100%;
-        height: auto;
-    }
-`
-
-export const ItemInvisible = styled.div`
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 98.6%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding: 0 3em 2em;
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-
-    &:hover {
-        opacity: 1;
-    }
-
-    & a {
-        cursor: pointer;
-
-        & svg {
-            width: 1.3em !important;
-            height: 100%;
-        }
-    }
-`
-
 export const InvisibleLink = styled.div`
     width: 2.5em;
     height: 2.5em;
