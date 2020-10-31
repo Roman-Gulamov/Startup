@@ -20,20 +20,19 @@ import {
 const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
     const [activeClass, setActiveClass] = useState<string>('All');
     const [works, setWorks] = useState<IWorksKeys>(serverWorks);
-    const [directions, setDirections] = useState<IWorksKeys>(serverWorks? serverWorks.directions : []);
-    const [cards, setCards] = useState<IWorksKeys>(serverWorks? serverWorks.cards : []);
+    const [newWorks, setNewWorks] = useState<IWorksKeys | Array<any>>(serverWorks);
     
     const filterWorks = (title: string): boolean | void => {
         setActiveClass(title);
-        setCards([]);
+        setNewWorks([]);
         
         works.cards.map((data) => {
             const cardsDirection = data.direction;
 
             if (cardsDirection === title) {
-                setCards(oldData => [...oldData, data]);
+                setNewWorks(oldData => [...oldData, data]);
             } else if (title === 'All') {
-                setCards(serverWorks? serverWorks.cards : works.cards);
+                setNewWorks(serverWorks? serverWorks.cards : works.cards);
             } else {
                 return false;
             }
@@ -53,8 +52,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
             const response = await fetch(`${process.env.API_URL}/works`);
             const json = await response.json();
             setWorks(json);
-            setDirections(json.directions);
-            setCards(json.cards);
+            setNewWorks(json);
         }
 
         !serverWorks ? load() : null;
@@ -73,7 +71,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
         return (
             <AppWrapper title="| Works">
                 <WorksSort>
-                    {directions.map(({ id, direction }: IPropsWorks) =>
+                    {works.directions.map(({ id, direction }: IPropsWorks) =>
                         <SortItem
                             key={id}
                             onClick={() => filterWorks(direction)}
@@ -83,7 +81,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
                     )}
                 </WorksSort>
                 <WorksCards>
-                    {cards.map(({ id, image, title, direction }: IPropsWorks) =>
+                    {newWorks.cards.map(({ id, image, title, direction }: IPropsWorks) =>
                         <CardsItem key={id}>
                             <ItemImage width="23em">
                                 <Image src={image} alt={title} unsized={true} />
