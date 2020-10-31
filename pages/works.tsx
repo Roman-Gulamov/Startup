@@ -20,7 +20,7 @@ import {
 const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
     const [activeClass, setActiveClass] = useState<string>('All');
     const [works, setWorks] = useState<IWorksKeys>(serverWorks);
-    const [newWorks, setNewWorks] = useState<IWorksKeys | Array<any>>(serverWorks);
+    const [newWorks, setNewWorks] = useState<IWorksKeys | Array<IWorksKeys>>(serverWorks);
     
     const filterWorks = (title: string): boolean | void => {
         setActiveClass(title);
