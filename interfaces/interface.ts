@@ -3,35 +3,59 @@ export interface IWrapper {
     title?: string
 }
 
+
 export interface ServicesProps {
-    services: IServices[]
+    services: Array<IServices>
 }
 
 export interface IServices {
-    id: string | number,
+    id: number,
     logo: string,
     title: string,
     subtitle: string
 }
 
+
 export interface AboutPage {
-    about: IAboutProps[]
+    about: Array<IAboutProps>
 }
 
 export interface IAboutProps {
-    description: AboutDescription[],
-    team: AboutTeam[]
+    description: Array<IAboutDescription>,
+    team: Array<IAboutTeam>
 }
 
-export interface AboutDescription {
-    id: string | number,
+export interface IAboutDescription {
+    id: number,
     title: string
 }
 
-export interface AboutTeam {
-    id: string | number,
+export interface IAboutTeam {
+    id: number,
     image: string,
     name: string,
     position: string,
     social: string
+}
+
+
+export interface WorksPage {
+    works: Array<IAboutProps>
+}
+
+export interface IWorksProps {
+    description: Array<IWorksDirections>,
+    team: Array<IWorksCard>
+}
+
+export interface IWorksDirections {
+    id: number,
+    direction: string
+}
+
+export interface IWorksCard {
+    id: number,
+    image: string,
+    title: string,
+    direction: string
 }

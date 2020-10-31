@@ -9,3 +9,15 @@ export interface IPosition {
 export interface IActiveClass {
     activeClass: string
 }
+
+export interface IPropsItemImg {
+    width: string,
+    services?: boolean
+}
+
+export interface IPropsItemInvisible {
+    height: string,
+    background: string,
+    worksProps?: boolean,
+    aboutProps?: boolean
+}
