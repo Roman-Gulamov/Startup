@@ -8,8 +8,8 @@ import { Container } from '../styles/Container';
 import { Wrapper, AppTitle, AppNav, Main, AppHumburger, Line, NavInvisible} from '../styles/AppWrapper';
 
 
-export const AppWrapper = ({ children, title }: IWrapper) => {
-    const [isOpen, setIsOpen] = useState('');
+export const AppWrapper = ({ children, title }: IWrapper): JSX.Element => {
+    const [isOpen, setIsOpen] = useState<string>('');
 
     const toggleMenu = () => {
         if (window.innerWidth <= 768) {
