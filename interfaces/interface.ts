@@ -21,7 +21,7 @@ export interface AboutPage {
 }
 
 export interface IAboutProps {
-    [key: string]: Array<IPropsAbout>
+    [key: string]: Array<object>
 }
 
 export interface IAboutDescription {
@@ -36,15 +36,6 @@ export interface IAboutTeam {
     position: string,
     social: string
 }
-
-export interface IPropsAbout extends IAboutDescription{
-    id?: number,
-    image?: string,
-    name?: string,
-    position?: string,
-    social?: string
-}
-
 
 export interface WorksPage {
     works: Array<IWorksProps>
