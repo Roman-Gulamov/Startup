@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AppWrapper } from '../components/AppWrapper';
 import { Wrapper, HomeTitle, HomeSubtitle, HomeButton } from '../styles/Home';
 
-const Index = () => {
+const Index = (): JSX.Element => {
     return (
         <AppWrapper>
             <Wrapper>

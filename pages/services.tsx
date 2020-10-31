@@ -6,12 +6,16 @@ import { ServicesProps, IServices } from '../interfaces/interface';
 
 import loading from '../assets/images/loading.svg';
 import { Loading } from '../styles/Loading';
-import { Wrapper, ServiceItem, ItemImg, ItemTitle, ItemSubtitle } from '../styles/Services';
+import { ItemImage } from '../styles/Item';
+import { 
+    Wrapper, 
+    ServiceItem, 
+    ItemTitle, 
+    ItemSubtitle } from '../styles/Services';
 
 
-
-const Services = ({ services: serverServices }: ServicesProps) => {
-    const [services, setServices] = useState(serverServices);
+const Services = ({ services: serverServices }: ServicesProps): JSX.Element => {
+    const [services, setServices] = useState<Array<any>>(serverServices);
     
     useEffect(() => {
         const load = async () => {
@@ -36,11 +40,11 @@ const Services = ({ services: serverServices }: ServicesProps) => {
         return (
             <AppWrapper title="| Services">
                 <Wrapper>
-                    {services.map(({ id, logo, title, subtitle }) =>
+                    {services.map(({ id, logo, title, subtitle }: IServices) =>
                         <ServiceItem key={id}>
-                            <ItemImg>
+                            <ItemImage width="7em" services>
                                 <Image src={logo} alt={title} unsized={true} />
-                            </ItemImg>
+                            </ItemImage>
                             <ItemTitle>{title}</ItemTitle>
                             <ItemSubtitle>{subtitle}</ItemSubtitle>
                         </ServiceItem>
@@ -60,7 +64,7 @@ Services.getInitialProps = async ({ req }) => {
     }
 
     const response = await fetch(`${process.env.API_URL}/services`);
-    const services = await response.json();
+    const services: IServices = await response.json();
 
     return {
         services

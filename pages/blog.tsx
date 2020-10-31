@@ -1,7 +1,7 @@
 import { AppWrapper } from '../components/AppWrapper';
 
 
-const Blog = () => {
+const Blog = (): JSX.Element => {
     return (
         <AppWrapper>
             <p>Blog!</p>

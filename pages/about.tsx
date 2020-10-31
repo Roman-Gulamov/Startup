@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { AppWrapper } from '../components/AppWrapper';
 import { AboutMap } from '../components/AboutMap';
-import { AboutPage, IAboutProps } from '../interfaces/interface';
+import { AboutPage, IAboutProps, IAboutDescription } from '../interfaces/interface';
 
 import loading from '../assets/images/loading.svg';
 import { Loading } from '../styles/Loading';
@@ -10,8 +10,8 @@ import { Wrapper, AboutText, TextItem, AboutDevelopers } from '../styles/About';
 
 
 
-const About = ({ about: serverAbout }) => {
-    const [about, setAbout] = useState(serverAbout);
+const About = ({ about: serverAbout }: AboutPage): JSX.Element => {
+    const [about, setAbout] = useState<Array<any>>(serverAbout);
     
     useEffect(() => {
         const load = async () => {
@@ -36,7 +36,7 @@ const About = ({ about: serverAbout }) => {
             <AppWrapper title="| About">
                 <Wrapper>
                     <AboutText>
-                        {about.description.map(({ id, title }) =>
+                        {about.description.map(({ id, title }: IAboutDescription) =>
                             <TextItem key={id}>
                                 <p>{title}</p>
                             </TextItem>
@@ -59,7 +59,7 @@ About.getInitialProps = async ({ req }) => {
     }
 
     const response = await fetch(`${process.env.API_URL}/about`);
-    const about = await response.json();
+    const about: IAboutProps = await response.json();
 
     return {
         about
