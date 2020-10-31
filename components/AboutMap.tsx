@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faVk, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 
-import { AboutPage, IAboutTeam } from '../interfaces/interface';
+import { AboutPage, IAboutTeam, IPropsAbout } from '../interfaces/interface';
 import { ItemImage, ItemInvisible } from '../styles/Item';
 import { 
     DevelopersItem, 
@@ -14,7 +14,7 @@ import {
 export const AboutMap = ({ about }: AboutPage): JSX.Element => {
     return (
         <>
-        {about.team.map(({ id, image, name, position, social }: IAboutTeam) =>
+        {about.team.map(({ id, image, name, position, social }: IPropsAbout) =>
             <DevelopersItem key={id}>
                 <ItemImage width="17em">
                     <Image src={image} alt={name} unsized={true} />
