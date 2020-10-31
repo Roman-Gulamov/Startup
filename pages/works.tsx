@@ -20,19 +20,19 @@ import {
 const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
     const [activeClass, setActiveClass] = useState<string>('All');
     const [works, setWorks] = useState<IWorksKeys>(serverWorks);
-    const [newWorks, setNewWorks] = useState<IWorksKeys | Array<IWorksKeys>>(serverWorks);
+    const [cards, setCards] = useState<Array<any>>(serverWorks ? serverWorks.cards : []);
     
     const filterWorks = (title: string): boolean | void => {
         setActiveClass(title);
-        setNewWorks([]);
+        setCards([]);
         
         works.cards.map((data) => {
             const cardsDirection = data.direction;
 
             if (cardsDirection === title) {
-                setNewWorks(oldData => [...oldData, data]);
+                setCards(oldData => [...oldData, data]);
             } else if (title === 'All') {
-                setNewWorks(serverWorks? serverWorks.cards : works.cards);
+                setCards(serverWorks? serverWorks.cards : works.cards);
             } else {
                 return false;
             }
@@ -52,7 +52,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
             const response = await fetch(`${process.env.API_URL}/works`);
             const json = await response.json();
             setWorks(json);
-            setNewWorks(json);
+            setCards(json.cards);
         }
 
         !serverWorks ? load() : null;
@@ -81,7 +81,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
                     )}
                 </WorksSort>
                 <WorksCards>
-                    {newWorks.cards.map(({ id, image, title, direction }: IPropsWorks) =>
+                    {cards.map(({ id, image, title, direction }: IPropsWorks) =>
                         <CardsItem key={id}>
                             <ItemImage width="23em">
                                 <Image src={image} alt={title} unsized={true} />
