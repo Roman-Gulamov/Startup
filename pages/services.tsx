@@ -15,7 +15,7 @@ import {
 
 
 const Services = ({ services: serverServices }: ServicesProps): JSX.Element => {
-    const [services, setServices] = useState<Array<any>>(serverServices);
+    const [services, setServices] = useState<Array<IServices>>(serverServices);
     
     useEffect(() => {
         const load = async () => {
