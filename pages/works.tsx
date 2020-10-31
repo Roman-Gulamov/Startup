@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { AppWrapper } from '../components/AppWrapper';
-import { WorksPage, IWorksProps, IWorksDirections, IWorksCard } from '../interfaces/interface';
+import { WorksPage, IWorksKeys, IPropsWorks } from '../interfaces/interface';
 
 import loading from '../assets/images/loading.svg';
 import { Loading } from '../styles/Loading';
@@ -19,9 +19,9 @@ import {
 
 const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
     const [activeClass, setActiveClass] = useState<string>('All');
-    const [works, setWorks] = useState<Array<any>>(serverWorks);
-    const [directions, setDirections] = useState<Array<any>>(serverWorks? serverWorks.directions : []);
-    const [cards, setCards] = useState<Array<any>>(serverWorks? serverWorks.cards : []);
+    const [works, setWorks] = useState<IWorksKeys>(serverWorks);
+    const [directions, setDirections] = useState<IPropsWorks>(serverWorks? serverWorks.directions : []);
+    const [cards, setCards] = useState<IPropsWorks>(serverWorks? serverWorks.cards : []);
     
     const filterWorks = (title: string): boolean | void => {
         setActiveClass(title);
@@ -73,7 +73,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
         return (
             <AppWrapper title="| Works">
                 <WorksSort>
-                    {directions.map(({ id, direction }: IWorksDirections) =>
+                    {directions.map(({ id, direction }: IPropsWorks) =>
                         <SortItem
                             key={id}
                             onClick={() => filterWorks(direction)}
@@ -83,7 +83,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
                     )}
                 </WorksSort>
                 <WorksCards>
-                    {cards.map(({ id, image, title, direction }: IWorksCard) =>
+                    {cards.map(({ id, image, title, direction }: IPropsWorks) =>
                         <CardsItem key={id}>
                             <ItemImage width="23em">
                                 <Image src={image} alt={title} unsized={true} />
@@ -114,7 +114,7 @@ Works.getInitialProps = async ({ req }) => {
     }
 
     const response = await fetch(`${process.env.API_URL}/works`);
-    const works: IWorksProps = await response.json();
+    const works: IWorksKeys = await response.json();
 
     return {
         works
