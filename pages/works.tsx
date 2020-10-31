@@ -20,8 +20,8 @@ import {
 const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
     const [activeClass, setActiveClass] = useState<string>('All');
     const [works, setWorks] = useState<IWorksKeys>(serverWorks);
-    const [directions, setDirections] = useState<IPropsWorks>(serverWorks? serverWorks.directions : []);
-    const [cards, setCards] = useState<IPropsWorks>(serverWorks? serverWorks.cards : []);
+    const [directions, setDirections] = useState<IWorksKeys>(serverWorks? serverWorks.directions : []);
+    const [cards, setCards] = useState<IWorksKeys>(serverWorks? serverWorks.cards : []);
     
     const filterWorks = (title: string): boolean | void => {
         setActiveClass(title);
