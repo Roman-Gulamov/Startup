@@ -104,17 +104,17 @@ export async function getStaticProps({ params }) {
     }
 }
 
-Blog.getInitialProps = async ({ query, req }: BlogNextPageContext) => { 
-    if (!req) { 
-        return {blog: null}
-    }
+// Blog.getInitialProps = async ({ query, req }: BlogNextPageContext) => { 
+//     if (!req) { 
+//         return {blog: null}
+//     }
 
-    const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
-    const blog: IBlog = await response.json();
+//     const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
+//     const blog: IBlog = await response.json();
 
-    return {
-        blog
-    }
-}
+//     return {
+//         blog
+//     }
+// }
 
 
