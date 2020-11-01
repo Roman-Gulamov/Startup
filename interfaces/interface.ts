@@ -61,7 +61,7 @@ export interface BlogPostProps {
 }
 
 export interface IBlog {
-    id: number,
+    id: number | string,
     image: string,
     date: number,
     month: string,
