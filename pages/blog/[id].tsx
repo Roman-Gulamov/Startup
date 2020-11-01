@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { AppWrapper } from '../../components/AppWrapper';
 import { ItemImage } from '../../styles/Item';
 
-import { BlogPostProps, IBlog, PostNextPageContext } from '../../interfaces/interface';
+import { BlogPostProps, IBlog, BlogNextPageContext } from '../../interfaces/interface';
 
 import loading from '../../assets/images/loading.svg';
 import { Loading } from '../../styles/Loading';
@@ -27,13 +27,13 @@ import {
 
 const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
     const router = useRouter();
-    const [blogPost, setBlogPost] = useState<IBlog>(serverBlog);
+    const [blogPost, setBlogPost] = useState<IBlog>(serverBlog ? serverBlog : null);
 
     useEffect(() => {
         const load = async () => {
             const response = await fetch(`${process.env.API_URL}/blog/${router.query.id}`);
-            const data = await response.json();
-            setBlogPost(data);
+            const json = await response.json();
+            setBlogPost(json);
         }
 
         if (!serverBlog) {
@@ -88,7 +88,7 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 export default Blog;
 
 
-Blog.getInitialProps = async ({query, req}: PostNextPageContext) => { 
+Blog.getInitialProps = async ({query, req}: BlogNextPageContext) => { 
     if (!req) { 
         return {blog: null}
     }

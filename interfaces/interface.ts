@@ -71,7 +71,7 @@ export interface IBlog {
     text: string
 }
 
-export interface PostNextPageContext extends NextPageContext {
+export interface BlogNextPageContext extends NextPageContext {
     query: {
         id: string
     }
