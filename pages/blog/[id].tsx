@@ -88,10 +88,7 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 export default Blog;
 
 
-Blog.getInitialProps = async ({query, req}: BlogNextPageContext) => { 
-    if (!req) { 
-        return {blog: null}
-    }
+Blog.getInitialProps = async ({ query }: BlogNextPageContext) => { 
     const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
     const blog: IBlog = await response.json();
 

@@ -10,7 +10,6 @@ import { Loading } from '../styles/Loading';
 import { Wrapper, AboutText, TextItem, AboutDevelopers } from '../styles/About';
 
 
-
 const About = ({ about: serverAbout }: AboutPage): JSX.Element => {
     const [about, setAbout] = useState<IAboutKeys>(serverAbout);
     
@@ -54,7 +53,7 @@ const About = ({ about: serverAbout }: AboutPage): JSX.Element => {
 
 export default About;
 
-About.getInitialProps = async ({ req }) => {
+About.getInitialProps = async ({ req }: NextPageContext) => {
     if (!req) {
         return {about: null}
     }
