@@ -182,7 +182,11 @@ export const ContentRead = styled.div<IBlogPost>`
     ${props => props.blogPost && css`
         position: absolute;
         left: 0;
-        top: -5%;
+        top: 0;
         font-size: 1.5em;
+
+        @media screen and (max-width: 768px) {
+            top: -5%;
+        }
     `}
 `
