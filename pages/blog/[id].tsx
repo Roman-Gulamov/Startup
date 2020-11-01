@@ -40,7 +40,7 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
     }, []);
 
 
-    if (!blogPost) {
+    if (router.isFallback) {
         return (
             <AppWrapper title={`| Post - ${router.query.id}`}>
                 <Loading>
@@ -87,20 +87,33 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 export default Blog;
 
 
-export async function getStaticPaths() {
-    return {
-        paths: [{ params: { id: 1 } }],
-        fallback: true,
+export const getStaticPaths = async () => {
+    const response = await fetch(`${process.env.API_URL}/blog`)
+    const blog: IBlog[] = await response.json()
+
+    const paths = blog.map((blog) => ({
+        params: { id: blog.id },
+    }))
+
+    return { 
+        paths, 
+        fallback: false 
     }
 }
 
-export async function getStaticProps({ params }) {
-    const res = await fetch(`${process.env.API_URL}/blog/${params.id}`)
-    const blog = await res.json()
+export const getStaticProps = async ({ params }) => {
+    if (!params) { 
+        return {props: { blog: null }}
+    }
 
+    const response = await fetch(`${process.env.API_URL}/blog/${params.id}`)
+    const blog: IBlog = await response.json()
+    
     return {
-        props: { blog },
-        revalidate: 1,
+        props: { 
+            blog,
+            revalidate: 1
+        }
     }
 }
 
