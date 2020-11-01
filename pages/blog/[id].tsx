@@ -88,14 +88,25 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 export default Blog;
 
 
-Blog.getStaticProps = async ({query, req}: BlogNextPageContext) => { 
+// Blog.getInitialProps = async ({query, req}: BlogNextPageContext) => { 
+//     if (!req) { 
+//         return {blog: null}
+//     }
+//     const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
+//     const blog: IBlog = await response.json();
+
+//     return {
+//         blog
+//     }
+// }
+
+
+export const getServerSideProps = async ({ query, req }: BlogNextPageContext) => {
     if (!req) { 
         return {blog: null}
     }
     const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
     const blog: IBlog = await response.json();
 
-    return {
-        blog
-    }
+    return {props: {blog}}
 }
