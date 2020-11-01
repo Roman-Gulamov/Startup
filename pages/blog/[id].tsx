@@ -36,10 +36,9 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
             setBlogPost(json);
         }
 
-        if (!serverBlog) {
-            load();
-        }
+        !serverBlog ? load() : null;
     }, []);
+
 
     if (!blogPost) {
         return (
@@ -87,8 +86,17 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 
 export default Blog;
 
+export async function getStaticPaths() {
+    return {
+        paths: [{ params: { id: 1 } }],
+        fallback: true,
+    }
+}
 
-Blog.getInitialProps = async ({ query }: BlogNextPageContext) => { 
+Blog.getInitialProps = async ({ query, req }: BlogNextPageContext) => { 
+    if (!req) { 
+        return {blog: null}
+    }
     const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
     const blog: IBlog = await response.json();
 
