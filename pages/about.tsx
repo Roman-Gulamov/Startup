@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { NextPageContext } from 'next';
 
 import { AppWrapper } from '../components/AppWrapper';
 import { AboutMap } from '../components/AboutMap';
@@ -53,7 +54,7 @@ const About = ({ about: serverAbout }: AboutPage): JSX.Element => {
 
 export default About;
 
-About.getInitialProps = async ({ req }) => {
+About.getInitialProps = async ({ req }: NextPageContext) => {
     if (!req) {
         return {about: null}
     }

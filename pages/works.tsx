@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { NextPageContext } from 'next';
 import Image from 'next/image';
 
 import { AppWrapper } from '../components/AppWrapper';
@@ -106,7 +107,7 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
 export default Works;
 
 
-Works.getInitialProps = async ({ req }) => {
+Works.getInitialProps = async ({ req }: NextPageContext) => {
     if (!req) {
         return {works: null}
     }
