@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { AppWrapper } from '../../components/AppWrapper';
 import { ItemImage } from '../../styles/Item';
 
-import { BlogProps, IBlog, PostNextPageContext } from '../../interfaces/interface';
+import { BlogPostProps, IBlog, PostNextPageContext } from '../../interfaces/interface';
 
 import loading from '../../assets/images/loading.svg';
 import { Loading } from '../../styles/Loading';
@@ -25,9 +25,9 @@ import {
     ContentRead } from '../../styles/Blog';
 
 
-const Blog = ({ blog: serverBlog } : BlogProps): JSX.Element => {
+const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
     const router = useRouter();
-    const [blogPost, setBlogPost] = useState<Array<IBlog>>(serverBlog);
+    const [blogPost, setBlogPost] = useState<IBlog>(serverBlog);
 
     useEffect(() => {
         const load = async () => {
