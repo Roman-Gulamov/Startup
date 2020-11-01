@@ -54,7 +54,7 @@ const About = ({ about: serverAbout }: AboutPage): JSX.Element => {
 
 export default About;
 
-About.getInitialProps = async ({ req }: NextPageContext) => {
+About.getInitialProps = async ({ req }) => {
     if (!req) {
         return {about: null}
     }
