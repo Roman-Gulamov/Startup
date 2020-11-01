@@ -12,7 +12,8 @@ export interface IActiveClass {
 
 export interface IPropsItemImg {
     width: string,
-    services?: boolean
+    services?: boolean,
+    blog?: boolean
 }
 
 export interface IPropsItemInvisible {
@@ -20,4 +21,8 @@ export interface IPropsItemInvisible {
     background: string,
     worksProps?: boolean,
     aboutProps?: boolean
+}
+
+export interface IBlogPost {
+    blogPost?: boolean
 }

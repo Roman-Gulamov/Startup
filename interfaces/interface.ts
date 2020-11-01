@@ -1,3 +1,5 @@
+import { NextPageContext } from 'next';
+
 export interface IWrapper {
     children: any,
     title?: string
@@ -47,4 +49,26 @@ export interface IPropsWorks {
     direction?: string,
     image?: string,
     title?: string
+}
+
+
+export interface BlogProps {
+    blog: Array<IBlog>
+}
+
+export interface IBlog {
+    id: number,
+    image: string,
+    date: number,
+    month: string,
+    title: string,
+    name: string,
+    direction: string,
+    text: string
+}
+
+export interface PostNextPageContext extends NextPageContext {
+    query: {
+        id: string
+    }
 }
