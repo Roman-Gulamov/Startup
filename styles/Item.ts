@@ -13,9 +13,24 @@ export const ItemImage = styled.div<IPropsItemImg>`
         }
     `}
 
+    ${props => props.blog && css`
+        @media screen and (max-width: 768px) {
+            width: 25em;
+            margin: 0 auto;
+        }
+    `}
+
     & img {
         width: 100%;
         height: auto;
+
+        ${props => props.blog && css`
+            @media screen and (max-width: 768px) {
+                display: flex;
+                width: 85%;
+                margin: 0 auto;
+            }
+        `}
     }
 `
 
