@@ -27,7 +27,7 @@ import {
 
 const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
     const router = useRouter();
-    const [blogPost, setBlogPost] = useState<IBlog>(serverBlog ? serverBlog : null);
+    const [blogPost, setBlogPost] = useState<IBlog>(serverBlog);
 
     useEffect(() => {
         const load = async () => {
@@ -88,7 +88,7 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 export default Blog;
 
 
-Blog.getInitialProps = async ({query, req}: BlogNextPageContext) => { 
+Blog.getStaticProps = async ({query, req}: BlogNextPageContext) => { 
     if (!req) { 
         return {blog: null}
     }
