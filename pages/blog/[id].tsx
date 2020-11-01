@@ -86,6 +86,7 @@ const Blog = ({ blog: serverBlog } : BlogPostProps): JSX.Element => {
 
 export default Blog;
 
+
 export async function getStaticPaths() {
     return {
         paths: [{ params: { id: 1 } }],
@@ -93,10 +94,21 @@ export async function getStaticPaths() {
     }
 }
 
+export async function getStaticProps({ params }) {
+    const res = await fetch(`${process.env.API_URL}/blog/${params.id}`)
+    const blog = await res.json()
+
+    return {
+        props: { blog },
+        revalidate: 1,
+    }
+}
+
 Blog.getInitialProps = async ({ query, req }: BlogNextPageContext) => { 
     if (!req) { 
         return {blog: null}
     }
+
     const response = await fetch(`${process.env.API_URL}/blog/${query.id}`);
     const blog: IBlog = await response.json();
 
