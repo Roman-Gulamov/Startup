@@ -56,6 +56,10 @@ export interface BlogProps {
     blog: Array<IBlog>
 }
 
+export interface BlogPostProps {
+    blog: IBlog
+}
+
 export interface IBlog {
     id: number,
     image: string,
@@ -72,3 +76,4 @@ export interface PostNextPageContext extends NextPageContext {
         id: string
     }
 }
+
