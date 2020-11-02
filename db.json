@@ -192,27 +192,5 @@
             "direction": "Development",
             "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
         }
-    ],
-    "contact": {
-        "templates": [
-            {
-                "id": 1,
-                "icon": "faMapMarkerAlt",
-                "firstExample": "312, 7th Ave, New York",
-                "secondExample": "NY 101200, United States of America"
-            },
-            {
-                "id": 2,
-                "icon": "faMobileAlt",
-                "firstExample": "+65 0052 300, +65 88251",
-                "secondExample": "210 +88 01723 511 340"
-            },
-            {
-                "id": 3,
-                "icon": "faEnvelope",
-                "firstExample": "shapedtheme@gmail.com",
-                "secondExample": "khalilkode@gmail.com"
-            }
-        ]
-    }
+    ]
 }
