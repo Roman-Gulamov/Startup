@@ -143,7 +143,7 @@
     },
     "blog": [
         {
-            "id": "1",
+            "id": 1,
             "image": "/v1604235221/blog/Chair_q4kajp.png",
             "date": 18,
             "month": "oct",
@@ -153,7 +153,7 @@
             "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
         },
         {
-            "id": "2",
+            "id": 2,
             "image": "/v1604235221/blog/Clip_pcupre.png",
             "date": 21,
             "month": "oct",
@@ -163,7 +163,7 @@
             "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
         },
         {
-            "id": "3",
+            "id": 3,
             "image": "/v1604235221/blog/Notebook_jvh2nw.png",
             "date": 1,
             "month": "nov",
@@ -173,7 +173,7 @@
             "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
         },
         {
-            "id": "4",
+            "id": 4,
             "image": "/v1604235221/blog/Events_lnhbi3.png",
             "date": 5,
             "month": "nov",
@@ -183,7 +183,7 @@
             "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
         },
         {
-            "id": "5",
+            "id": 5,
             "image": "/v1604235221/blog/Phone_bujqki.png",
             "date": 14,
             "month": "nov",
@@ -192,5 +192,74 @@
             "direction": "Development",
             "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
         }
-    ]
+    ],
+    "contact": {
+        "templates": [
+            {
+                "id": 1,
+                "icon": "faMapMarkerAlt",
+                "firstExample": "312, 7th Ave, New York",
+                "secondExample": "NY 101200, United States of America"
+            },
+            {
+                "id": 2,
+                "icon": "faMobileAlt",
+                "firstExample": "+65 0052 300, +65 88251",
+                "secondExample": "210 +88 01723 511 340"
+            },
+            {
+                "id": 3,
+                "icon": "faEnvelope",
+                "firstExample": "shapedtheme@gmail.com",
+                "secondExample": "khalilkode@gmail.com"
+            }
+        ],
+        "inputs": [ 
+            {
+                "id": 1,
+                "name": "text",
+                "component": "input",
+                "autoFocus": true,
+                "autoComplete": true,
+                "type": "text",
+                "placeholder": "Your name"
+            },
+            {
+                "id": 2,
+                "name": "email",
+                "component": "input",
+                "autoFocus": false,
+                "autoComplete": true,
+                "type": "email",
+                "placeholder": "Your e-mail"
+            },
+            {
+                "id": 3,
+                "name": "text",
+                "component": "input",
+                "autoFocus": false,
+                "autoComplete": true,
+                "type": "text",
+                "placeholder": "Your subject"
+            },
+            {
+                "id": 4,
+                "name": "text",
+                "component": "input",
+                "autoFocus": false,
+                "autoComplete": true,
+                "type": "text",
+                "placeholder": "Company name"
+            },
+            {
+                "id": 5,
+                "name": "message",
+                "component": "textarea",
+                "autoFocus": false,
+                "autoComplete": null,
+                "type": null,
+                "placeholder": "Write your message"
+            }
+        ]
+    }
 }
