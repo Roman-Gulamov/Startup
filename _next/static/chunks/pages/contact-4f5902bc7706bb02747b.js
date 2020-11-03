@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[16],{QLSJ:function(n,c,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/contact",function(){return t("qARc")}])},qARc:function(n,c,t){"use strict";t.r(c);var o=t("nKUr"),_=t("VI8d");c.default=function(){return Object(o.jsx)(_.a,{children:Object(o.jsx)("p",{children:"Contact!"})})}}},[["QLSJ",0,2,1,3,4]]]);
