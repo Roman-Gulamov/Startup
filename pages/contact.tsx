@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
 import { AppWrapper } from '../components/AppWrapper';
-import { FormMap } from '../components/FormMap';
-import { CONTACTS_DATA } from '../components/Contacts_Data';
+import { FormMap } from '../components/Contacts/FormMap';
+import { CONTACTS_DATA } from '../components/Contacts/Contacts_Data';
 
 import { 
     Wrapper,

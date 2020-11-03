@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { AppWrapper } from '../components/AppWrapper';
-import { AboutMap } from '../components/AboutMap';
+import { AboutMap } from '../components/About/AboutMap';
 
 import { NextPageContext } from 'next';
 import { AboutPage, IAboutKeys, IPropsAbout } from '../interfaces/interface';

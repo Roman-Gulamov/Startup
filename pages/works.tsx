@@ -1,29 +1,39 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 
 import { AppWrapper } from '../components/AppWrapper';
+import { WorksMap } from '../components/Works/WorksMap';
+import searchActive from '../components/Works/searchActive';
 
 import { NextPageContext } from 'next';
 import { WorksPage, IWorksKeys, IPropsWorks } from '../interfaces/interface';
 
 import loading from '../assets/loading.svg';
 import { Loading } from '../styles/Loading';
-import { ItemImage, ItemInvisible } from '../styles/Item';
 import { 
     WorksSort,
     SortItem,
-    WorksCards,
-    CardsItem,
-    InvisibleTitle,
-    InvisibleDirection,
-    InvisibleButton} from '../styles/Works';
+    WorksCards } from '../styles/Works';
 
 
 const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
     const [activeClass, setActiveClass] = useState<string>('All');
     const [works, setWorks] = useState<IWorksKeys>(serverWorks);
     const [cards, setCards] = useState<Array<any>>(serverWorks ? serverWorks.cards : []);
-    
+    const [transformFront, setTransfromFront] = useState<string>('360deg');
+    const [transformBack, setTransfromBack] = useState<string>('180deg');
+
+
+    useEffect(() => {
+        const load = async () => {
+            const response = await fetch(`${process.env.API_URL}/works`);
+            const json = await response.json();
+            setWorks(json);
+            setCards(json.cards);
+        }
+
+        !serverWorks ? load() : null;
+    }, [])
+
     const filterWorks = (title: string): boolean | void => {
         setActiveClass(title);
         setCards([]);
@@ -40,25 +50,16 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
             }
         })
     }
-
-    const searchActive = (direction: string): string => {
-        if (activeClass === "" && direction === "All") {
-            return "All"
-        } else if (activeClass === direction) {
-            return activeClass
+    
+    const handleTransform = (side: boolean) => {
+        if (side) {
+            setTransfromFront('180deg');
+            setTransfromBack('360deg');
+        } else {
+            setTransfromFront('360deg');
+            setTransfromBack('180deg');
         }
     }
-    
-    useEffect(() => {
-        const load = async () => {
-            const response = await fetch(`${process.env.API_URL}/works`);
-            const json = await response.json();
-            setWorks(json);
-            setCards(json.cards);
-        }
-
-        !serverWorks ? load() : null;
-    }, [])
 
 
     if (!works) {
@@ -77,28 +78,18 @@ const Works = ({ works: serverWorks }: WorksPage): JSX.Element => {
                         <SortItem
                             key={id}
                             onClick={() => filterWorks(direction)}
-                            activeClass={searchActive(direction)}
+                            activeClass={searchActive(direction, activeClass)}
                             >{direction}
                         </SortItem>
                     )}
                 </WorksSort>
                 <WorksCards>
-                    {cards.map(({ id, image, title, direction }: IPropsWorks) =>
-                        <CardsItem key={id}>
-                            <ItemImage width="23em">
-                                <Image src={image} alt={title} unsized={true} />
-                                <ItemInvisible
-                                    worksProps
-                                    height="99%"
-                                    background="rgba(207, 0, 15, 0.7)"
-                                >
-                                    <InvisibleTitle>{title}</InvisibleTitle>
-                                    <InvisibleDirection>{direction}</InvisibleDirection>
-                                    <InvisibleButton type="button">View &gt;</InvisibleButton>
-                                </ItemInvisible>
-                            </ItemImage>
-                        </CardsItem>
-                    )}
+                    <WorksMap 
+                        cards={cards}
+                        transformFront={transformFront}
+                        handleTransform={handleTransform}
+                        transformBack={transformBack}
+                    />
                 </WorksCards>
             </AppWrapper>
         )
