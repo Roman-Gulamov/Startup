@@ -51,6 +51,14 @@ export const AppNav = styled.nav<IOpen>`
         `}
     }
 
+    @media screen and (max-height: 400px) {
+        margin: 0 -6.5em;
+    }
+
+    @media screen and (max-height: 300px) {
+        margin: 0 -7em;
+    }
+
     & a {
         font-size: 1em;
         padding-right: 2em;
