@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { AppWrapper } from '../../components/AppWrapper';
 import { ItemImage } from '../../styles/Item';
 
-import { BlogPostProps, IBlog, BlogNextPageContext } from '../../interfaces/interface';
+import { BlogPostProps, IBlog } from '../../interfaces/interface';
 
 import loading from '../../assets/images/loading.svg';
 import { Loading } from '../../styles/Loading';

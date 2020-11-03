@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { NextPageContext } from 'next';
 import Image from 'next/image';
 
 import { AppWrapper } from '../components/AppWrapper';
+
+import { NextPageContext } from 'next';
 import { WorksPage, IWorksKeys, IPropsWorks } from '../interfaces/interface';
 
-import loading from '../assets/images/loading.svg';
+import loading from '../assets/loading.svg';
 import { Loading } from '../styles/Loading';
 import { ItemImage, ItemInvisible } from '../styles/Item';
 import { 
