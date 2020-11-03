@@ -1,19 +1,19 @@
 {
     "services": [
         {
-            "id": 1,
+            "id": "1",
             "logo": "/v1604002825/services/Typography_xt5s1q.svg",
             "title": "Clean typography",
             "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum."
         },
         {
-            "id": 2,
+            "id": "2",
             "logo": "/v1604002825/services/Solid_hfsqsk.svg",
             "title": "Rock solid code",
             "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum."
         },
         {
-            "id": 3,
+            "id": "3",
             "logo": "/v1604002825/services/Support_wj7iix.svg",
             "title": "Expert support",
             "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum."
@@ -22,38 +22,38 @@
     "about": {
         "description": [
             {
-                "id": 1,
+                "id": "1",
                 "title": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor sit amet. Lorem ipsum eat."
             },
             {
-                "id": 2,
+                "id": "2",
                 "title": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor sit amet. Lorem ipsum eat."
             }
         ],
         "team": [
             {
-                "id": 1,
+                "id": "1",
                 "image": "/v1604007388/about/Khalil_od2l1o.png",
                 "name": "Md. Khalil Uddin",
                 "position": "Head of Ideas",
                 "social": "Khalil"
             },
             {
-                "id": 2,
+                "id": "2",
                 "image": "/v1604007388/about/Rubel_zm2rke.png",
                 "name": "Rubel Miah",
                 "position": "Lead WordPress Developer",
                 "social": "Rubel"
             },
             {
-                "id": 3,
+                "id": "3",
                 "image": "/v1604007388/about/Shamim_eo8skn.png",
                 "name": "Shamim Mia",
                 "position": "Sr. Web Developer",
                 "social": "Mia"
             },
             {
-                "id": 4,
+                "id": "4",
                 "image": "/v1604007388/about/John_yyumt4.png",
                 "name": "John Doe",
                 "position": "Front-end Developer",
@@ -64,77 +64,77 @@
     "works": {
         "directions": [
             {
-                "id": 1,
+                "id": "1",
                 "direction": "All"
             },
             {
-                "id": 2,
+                "id": "2",
                 "direction": "Branding"
             },
             {
-                "id": 3,
+                "id": "3",
                 "direction": "Design"
             },
             {
-                "id": 4,
+                "id": "4",
                 "direction": "Development"
             },
             {
-                "id": 5,
+                "id": "5",
                 "direction": "Strategy"
             }
         ],
         "cards": [ 
             {
-                "id": 1,
+                "id": "1",
                 "image": "/v1604076689/Works/hair_cbrihu.png",
                 "title": "Hair dresser",
                 "direction": "Branding"
             },
             {
-                "id": 2,
+                "id": "2",
                 "image": "/v1604076688/Works/dove_bpyhfe.png",
                 "title": "Dove strategy",
                 "direction": "Strategy"
             },
             {
-                "id": 3,
+                "id": "3",
                 "image": "/v1604076688/Works/phone_gfiyrk.png",
                 "title": "Accelerated development",
                 "direction": "Development"
             },
             {
-                "id": 4,
+                "id": "4",
                 "image": "/v1604076690/Works/camera_dmspop.png",
                 "title": "Capturing moments",
                 "direction": "Design"
             },
             {
-                "id": 5,
+                "id": "5",
                 "image": "/v1604076688/Works/bike_q5ilng.png",
                 "title": "Brand promotion",
                 "direction": "Branding"
             },
             {
-                "id": 6,
+                "id": "6",
                 "image": "/v1604076689/Works/notebook_mqariv.png",
                 "title": "Masterpiece outline",
                 "direction": "Design"
             },
             {
-                "id": 7,
+                "id": "7",
                 "image": "/v1604076688/Works/events_e6hdrb.png",
                 "title": "Step by step guide",
                 "direction": "Strategy"
             },
             {
-                "id": 8,
+                "id": "8",
                 "image": "/v1604076689/Works/glasses_ejmdht.png",
                 "title": "Variety of technologies",
                 "direction": "Development"
             },
             {
-                "id": 9,
+                "id": "9",
                 "image": "/v1604076688/Works/clip_d0icbq.png",
                 "title": "It all starts with an idea",
                 "direction": "Design"
