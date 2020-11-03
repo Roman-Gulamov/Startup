@@ -1,3 +1,5 @@
+import { ILoginSchema } from './interface';
+
 export interface IOpen {
     open: string
 }
@@ -25,4 +27,9 @@ export interface IPropsItemInvisible {
 
 export interface IBlogPost {
     blogPost?: boolean
+}
+
+export interface IFormMap {
+    submitForm: (values: ILoginSchema, resetForm: any) => any | never
+    sendStatus: string
 }

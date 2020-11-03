@@ -1,4 +1,5 @@
-import { NextPageContext } from 'next';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 
 export interface IWrapper {
     children: any,
@@ -71,9 +72,29 @@ export interface IBlog {
     text: string
 }
 
-export interface BlogNextPageContext extends NextPageContext {
-    query: {
-        id: string
-    }
+
+export interface ILoginSchema {
+    name?: string,
+    email?: string,
+    subject?: string,
+    company?: string,
+    message?: string,
 }
 
+export interface IContactKeys {
+    [key: string]: Array<IPropsContact>
+}
+
+export interface IPropsContact {
+    id: number,
+    icon?: IconProp,
+    title?: string,
+    firstExample?: string,
+    secondExample?: string,
+    name?: string,
+    component?: string,
+    autoFocus?: boolean,
+    autoComplete?: string,
+    type?: string,
+    placeholder?: string
+}
