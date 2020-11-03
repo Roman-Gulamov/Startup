@@ -5,7 +5,14 @@ import Head from 'next/head';
 
 import { IWrapper } from '../interfaces/interface';
 import { Container } from '../styles/Container';
-import { Wrapper, AppTitle, AppNav, Main, AppHumburger, Line, NavInvisible} from '../styles/AppWrapper';
+import { 
+    Wrapper, 
+    AppTitle, 
+    AppNav, 
+    Main, 
+    AppHumburger, 
+    Line, 
+    NavInvisible } from '../styles/AppWrapper';
 
 
 export const AppWrapper = ({ children, title }: IWrapper): JSX.Element => {
@@ -44,7 +51,6 @@ export const AppWrapper = ({ children, title }: IWrapper): JSX.Element => {
                         <Link href='/about'><a>About</a></Link>
                         <Link href='/works'><a>Works</a></Link>
                         <Link href='/blog'><a>Blog</a></Link>
-                        <Link href='/clients'><a>Clients</a></Link>
                         <Link href='/contact'><a>Contact</a></Link>
                         <NavInvisible
                             open={isOpen}
