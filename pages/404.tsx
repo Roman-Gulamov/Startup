@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { AppWrapper } from '../components/AppWrapper';
+import { Wrapper, ErrorTitle } from '../styles/404';
 
 const ErrorPage = () => {
     return (
-        <AppWrapper title="Page not found">
-            <Link href='/'><a>Back to Home</a></Link>
-            <h1>Page Not found</h1>
+        <AppWrapper title="| 404">
+            <Wrapper>
+                <ErrorTitle>Page Not found...</ErrorTitle>
+            </Wrapper>
         </AppWrapper>
     )
 }
