@@ -12,7 +12,7 @@ export interface ServicesProps {
 }
 
 export interface IServices {
-    id: number,
+    id: string | number,
     logo: string,
     title: string,
     subtitle: string
@@ -28,7 +28,7 @@ export interface IAboutKeys {
 }
 
 export interface IPropsAbout {
-    id: number,
+    id: string | number,
     image?: string,
     name?: string,
     position?: string,
@@ -46,10 +46,17 @@ export interface IWorksKeys {
 }
 
 export interface IPropsWorks {
-    id?: number,
+    id?: string | number,
     direction?: string,
     image?: string,
     title?: string
+}
+
+export interface IWorksMap {
+    cards: Array<any>,
+    transformFront: string,
+    handleTransform: (side?: boolean) => boolean | void,
+    transformBack: string,
 }
 
 
@@ -86,7 +93,7 @@ export interface IContactKeys {
 }
 
 export interface IPropsContact {
-    id: number,
+    id: string | number,
     icon?: IconProp,
     title?: string,
     firstExample?: string,

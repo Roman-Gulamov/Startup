@@ -22,6 +22,10 @@ export interface IPropsItemInvisible {
     height: string,
     background: string,
     worksProps?: boolean,
+    worksPropsFront?: boolean,
+    transformFront?: string,
+    worksPropsBack?: boolean,
+    transformBack?: string,
     aboutProps?: boolean
 }
 
