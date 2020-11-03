@@ -70,6 +70,13 @@ export const InvisibleDirection = styled.span`
     font-size: 0.9em;
 `
 
+export const InvisibleText = styled.span`
+    text-align: center;
+    line-height: 1.5;
+    color: #000;
+    margin-bottom: 1em;
+`
+
 export const InvisibleButton = styled.button`
     width: 7em;
     height: 3em;
