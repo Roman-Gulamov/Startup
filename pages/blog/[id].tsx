@@ -10,7 +10,7 @@ import { ItemImage } from '../../styles/Item';
 
 import { BlogPostProps, IBlog } from '../../interfaces/interface';
 
-import loading from '../../assets/images/loading.svg';
+import loading from '../../assets/loading.svg';
 import { Loading } from '../../styles/Loading';
 
 import { 
