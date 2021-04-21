@@ -11,3 +11,7 @@
 ``` bash
     3.  npm run serve
 ```
+
+``` bash
+    4.  http://localhost:3000
+```
