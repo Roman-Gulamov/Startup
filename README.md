@@ -3,17 +3,17 @@
 # Instructions for starting a project:
 
 ``` bash
-    1.  git clone https://github.com/Roman-Gulamov/Startup.git
+  1.  git clone https://github.com/Roman-Gulamov/Startup.git
 ```
 
 ``` bash
-    2.  npm install
+  2.  npm install
 ```
 
 ``` bash
-    3.  npm run serve
+  3.  npm run serve
 ```
 
 ``` bash
-    4.  http://localhost:3000
+  4.  http://localhost:3000
 ```
